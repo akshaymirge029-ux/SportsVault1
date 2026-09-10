@@ -1,0 +1,25 @@
+/* Add this CSS to set text color to white */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+a {
+  color: #fff;
+}
+
+/* Additional styling for rules__container */
+.rules__content {
+  margin-top: 20px;
+}
+
+.rules__content ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.rules__content li {
+  margin-bottom: 10px;
+}

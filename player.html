@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Include Font Awesome for icons -->
+    <title>Famous Players</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+background-image: url(images/image.jpg);}
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            
+            background-size: cover;
+            background-position: center;
+            color: #ae0303;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex: 1;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .player-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 300px;
+            position: relative;
+        }
+
+        .player-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .player-info {
+            padding: 20px;
+        }
+
+        .player-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .player-info p {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .social-icons {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .social-icons a {
+            margin: 0 5px;
+            color: #333;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: black;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html">Home</a>
+    <h1>Famous Badminton Players</h1>
+</header>
+
+<div class="container">
+    <!-- Player 1 -->
+    <div class="player-card">
+        <img src="images/pvsindhu.jpg" alt="Player 1">
+        <div class="player-info">
+            <h2>P. V. Sindhu</h2>
+            <p>Position: Singles</p>
+            <p>Country: India</p>
+            <p>Achievements:</p>
+            <ul>
+                <li>She won the silver medal at the 2016 Rio Olympics in women's singles, becoming the first Indian woman to achieve the fea</li>
+                <li>Sindhu has also won multiple World Championships medals and several BWF World Tour titles</li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <!-- Player 2 -->
+    <div class="player-card">
+        <img src="images/SainaNehwal.jpg" alt="Player 2">
+        <div class="player-info">
+            <h2>Saina Nehwal</h2>
+            <p>Position: singles</p>
+            <p>Country: India</p>
+            <p>Achievements:</p>
+            <ul>
+                <li>first Indian to win an Olympic medal in badminton</li>
+                <li>She clinched the bronze medal at the 2012 London Olympics in women's singles</li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <!-- Player 3 -->
+    <div class="player-card">
+        <img src="images/kad.webp" alt="Player 3">
+        <div class="player-info">
+            <h2>Kidambi Srikanth</h2>
+            <p>Position: Mixed Doubles</p>
+            <p>Country: India</p>
+            <p>Achievements:</p>
+            <ul>
+                <li>He has won multiple Super Series titles, including the China Open and Indonesia Open </li>
+                <li>Srikanth achieved the world No. 1 ranking in men's singles in 2018</li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <!-- Player 4 -->
+    <div class="player-card">
+        <img src="images/lin dan.webp" alt="Player 4">
+        <div class="player-info">
+            <h2>Lin Dan</h2>
+            <p>Position: Singles</p>
+            <p>Country: China</p>
+            <p>Achievements:</p>
+            <ul>
+                <li>Lin Dan, often referred to as "Super Dan," is one of the greatest badminton players of all time</li>
+                <li>He has won two Olympic gold medals in men's singles, in 2008 (Beijing) and 2012 (London)</li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <!-- Player 5 -->
+    <div class="player-card">
+        <img src="images/Lee_Chong.png" alt="Player 5">
+        <div class="player-info">
+            <h2>Lee Chong Wei</h2>
+            <p>Position: Doubles</p>
+            <p>Country: Malaysia </p>
+            <p>Achievements:</p>
+            <ul>
+                <li>Lee Chong Wei is a former Malaysian badminton player who held the world No. 1 ranking for a record 349 weeks</li>
+                <li>He is a three-time Olympic silver medalist (2008, 2012, 2016) in men's singles.
+                    Lee Chong Wei has won numerous titles, including Commonwealth Games gold and multiple All England Championships.</li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <!-- Player 6 -->
+    <div class="player-card">
+        <img src="images/CHA.jpg" alt="Player 6">
+        <div class="player-info">
+            <h2>Carolina Marín</h2>
+            <p>Position: Mixed Doubles</p>
+            <p>Country:Spain</p>
+            <p>Achievements:</p>
+            <ul>
+                <li>Carolina Marín is a Spanish badminton player 
+                    who made history by winning the gold medal at the 2016 Rio Olympics in women's singles</li>
+                <li>She is known for her aggressive style of play and has clinched several World Championship titles</li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
+
+<footer>
+    <p>Copyright © 2023 Famous Players. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

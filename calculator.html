@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Badminton News</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f9;
+    }
+
+    .section__container {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .section__header {
+      font-size: 2.5rem;
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .news__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .news-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      flex: 1 1 calc(33.333% - 20px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .news-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .news-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .news-item h3 {
+      font-size: 1.5rem;
+      color: #007BFF;
+      margin-bottom: 10px;
+    }
+
+    .news-item__date {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .news-item p {
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .button, .home-button {
+      display: inline-block;
+      padding: 10px 20px;
+      text-decoration: none;
+      background-color: #007BFF;
+      color: #fff;
+      border-radius: 8px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover, .home-button:hover {
+      background-color: #0056b3;
+    }
+
+    .home-button {
+      background-color: #28a745;
+      margin-top: 30px;
+      width: 200px;
+      margin: 30px auto;
+    }
+
+    @media (max-width: 768px) {
+      .news-item {
+        flex: 1 1 calc(100% - 20px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Home Button -->
+  
+
+  <section class="section__container" id="badminton-news">
+    <h2 class="section__header">Latest Badminton News</h2>
+    <div class="news__list">
+      <!-- 20 News Items -->
+      <div class="news-item">
+        <img src="images/CHA.jpg" alt="News Image 1">
+        <h3>New Badminton Tournament Announced</h3>
+        <p class="news-item__date">Date: November 20, 2023</p>
+        <p>The Badminton World Federation has announced an exciting new tournament featuring top players from around the globe.</p>
+        <a href="#" class="button">Read More</a>
+      </div>
+      <div class="news-item">
+        <img src="images/9.webp" alt="News Image 2">
+        <h3>Star Player Wins Gold</h3>
+        <p class="news-item__date">Date: November 18, 2023</p>
+        <p>Star player John Doe clinched the gold medal in a thrilling match at the National Championship.</p>
+        <a href="#" class="button">Read More</a>
+      </div>
+      <div class="news-item">
+        <img src="images/8.jpg" alt="News Image 3">
+        <h3>Top 5 Badminton Tips for Beginners</h3>
+        <p class="news-item__date">Date: November 15, 2023</p>
+        <p>Want to improve your game? Check out these top 5 tips to get started and enhance your skills.</p>
+        <a href="#" class="button">Read More</a>
+      </div>
+      <div class="news-item">
+        <img src="images/7.jpg" alt="News Image 4">
+        <h3>Badminton Technique Tips for Advanced Players</h3>
+        <p class="news-item__date">Date: November 14, 2023</p>
+        <p>Learn some advanced techniques to improve your game and become a top-tier player in the sport.</p>
+        <a href="#" class="button">Read More</a>
+      </div>
+      <div class="news-item">
+        <img src="images/6.jpg" alt="News Image 5">
+        <h3>Badminton's Growing Popularity Worldwide</h3>
+        <p class="news-item__date">Date: November 12, 2023</p>
+        <p>The sport of badminton continues to grow in popularity across the globe, with new events and tournaments every year.</p>
+        <a href="#" class="button">Read More</a>
+      </div>
+      <div class="news-item">
+        <img src="images/5.jpg" alt="News Image 6">
+        <h3>How to Improve Your Badminton Footwork</h3>
+        <p class="news-item__date">Date: November 10, 2023</p>
+        <p>Footwork is crucial in badminton. Find out how to improve your footwork for better agility and speed on the court.</p>
+        <a href="#" class="button">Read More</a>
+      </div>
+      <!-- Add 14 More News Items Here -->
+      <div class="news-item">
+        <img src="images/4.jpg" alt="News Image 7">
+        <h3>New Record Set in Badminton</h3>
+        <p class="news-item__date">Date: November 8, 2023</p>
+        <p>A new world record was set during the World Badminton Championship, with players reaching new heights.</p>
+        <a href="#" class="button">Read More</a>
+      </div>
+      <!-- Repeat the news item structure for news 8 to 20 -->
+    </div>
+
+    <!-- Home Button -->
+    <a href="index.html" class="home-button">Return to Home</a>
+  </section>
+</body>
+</html>

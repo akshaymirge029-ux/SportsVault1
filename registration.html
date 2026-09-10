@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="login.css">
+    <script>
+        function handleRegistration() {
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Regular expression to check the password strength
+            var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+            // Email validation
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            
+            // Check if password matches the strength requirements
+            if (!passwordRegex.test(password)) {
+                alert("Password must contain at least 8 characters, including letters and numbers.");
+                return;
+            }
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+
+            // Check if email is valid
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // If everything is correct, alert success
+            alert("Registration successful!");
+
+            // Optionally, redirect to login page after successful registration
+            window.location.href = "login.html";
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <form onsubmit="event.preventDefault(); handleRegistration();">
+            <h1>Register</h1>
+            <div class="inputbox">
+                <ion-icon name="person-outline"></ion-icon>
+                <input type="text" id="username" required>
+                <label for="username">Username</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                <input type="email" id="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" id="password" required>
+                <label for="password">Password</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" id="confirmPassword" required>
+                <label for="confirmPassword">Confirm Password</label>
+            </div>
+            <div class="terms">
+                <label for=""><input type="checkbox" required>I agree to the Terms & Conditions</label>
+            </div>
+            <button type="submit">Register</button>
+            <div class="login">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

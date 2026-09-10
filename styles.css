@@ -1,0 +1,23 @@
+/* Basic star rating style */
+.star {
+    font-size: 2em; /* Size of the stars */
+    color: #ddd; /* Default color (empty stars) */
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  /* Filled star */
+  .star.filled {
+    color: gold;
+  }
+  
+  /* Hover effect for stars */
+  .star:hover {
+    color: #ffcc00; /* Color when hovering */
+  }
+  
+  /* Output text */
+  #rating-output {
+    margin-top: 10px;
+    font-size: 1.2em;
+  }

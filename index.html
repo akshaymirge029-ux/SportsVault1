@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>SportsVault
+    </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.css" />
+
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__bar">
+          <div class="logo nav__logo">
+            <a href="#"><img src="logo1.png" alt="logo" /></a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-3-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="index.html">HOME</a></li>
+          
+          <li><a href="#latest-matches">MATCHS</a></li>
+          <li><a href="player.html">PLAYER</a></li>
+          <li><a href="rule.html">RULE & REGULATIONS</a></li>
+          <li><a href="contact.html">CONTACT US</a></li>
+          <li><a href="calculator.html">NEWS</a></li>
+          <li><a href="login.html" class="btn">LOGIN US</a></li>
+          
+        </ul>
+      </nav>
+      <div class="section__container header__container" id="home">
+        <div class="header__content">
+          <h1>Welcome <br>to<br> SportsVault</h1>
+          <div class="header__btn">
+            <button class="btn">Read More</button>
+          </div>
+        </div>
+      </div>
+      
+    </header>
+    <style>
+      /* Chatbot styling */
+      #chatbot {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 350px; /* Increase size */
+        max-width: 100%;
+        display: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        z-index: 1000;
+      }
+  
+      #chatbot-header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        cursor: pointer;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        font-size: 18px;
+      }
+  
+      #chatbot-body {
+        background-color: white;
+        padding: 15px;
+        height: 400px; /* Larger size */
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .chatbot-message {
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+        max-width: 80%;
+        display: inline-block;
+        word-wrap: break-word;
+        font-size: 16px;
+      }
+  
+      .user-message {
+        text-align: right;
+        background-color: #4CAF50;
+        color: white;
+      }
+  
+      .bot-message {
+        text-align: left;
+        background-color: #f1f1f1;
+        color: #333;
+      }
+  
+      .message-buttons {
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+      }
+  
+      .message-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 8px;
+        margin-right: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+  
+      #chatbot-input {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        margin-top: 10px;
+      }
+  
+      #chatbot-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+      }
+  
+      /* Typing animation */
+      .typing-indicator {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 3px;
+        border-radius: 50%;
+        background-color: #4CAF50;
+        animation: typing 1s infinite step-start;
+      }
+  
+      @keyframes typing {
+        0% {
+          transform: scale(0.6);
+        }
+        50% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(0.6);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Chatbot Toggle Button -->
+    <div id="chatbot-toggle" onclick="toggleChatbot()">
+      💬
+    </div>
+  
+    <!-- Chatbot Container -->
+    <div id="chatbot">
+      <div id="chatbot-header" onclick="toggleChatbot()">
+        Chat with SportsVault
+      </div>
+      <div id="chatbot-body"></div>
+      <input
+        type="text"
+        id="chatbot-input"
+        placeholder="Ask me about sports events!"
+        onkeypress="sendMessage(event)"
+      />
+    </div>
+  
+    <!-- JavaScript for chatbot functionality -->
+    <script>
+      // Toggle chatbot visibility
+      function toggleChatbot() {
+        const chatbot = document.getElementById("chatbot");
+        const toggleButton = document.getElementById("chatbot-toggle");
+        if (chatbot.style.display === "none" || chatbot.style.display === "") {
+          chatbot.style.display = "block";
+          toggleButton.style.display = "none";
+        } else {
+          chatbot.style.display = "none";
+          toggleButton.style.display = "block";
+        }
+      }
+  
+      // Handle sending message
+      function sendMessage(event) {
+        if (event.key === "Enter") {
+          const inputField = document.getElementById("chatbot-input");
+          const userMessage = inputField.value.trim();
+          if (userMessage !== "") {
+            displayMessage(userMessage, "user-message");
+            inputField.value = "";
+            setTimeout(() => {
+              displayTypingIndicator();
+              generateBotResponse(userMessage);
+            }, 500);
+          }
+        }
+      }
+  
+      // Display message in chat
+      function displayMessage(message, className) {
+        const chatBody = document.getElementById("chatbot-body");
+        const messageElement = document.createElement("div");
+        messageElement.className = `chatbot-message ${className}`;
+        messageElement.textContent = message;
+        chatBody.appendChild(messageElement);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }
+  
+      // Show typing indicator
+      function displayTypingIndicator() {
+        const chatBody = document.getElementById("chatbot-body");
+        const typingElement = document.createElement("div");
+        typingElement.className = "chatbot-message bot-message";
+        typingElement.innerHTML = '<span class="typing-indicator"></span>Typing...';
+        chatBody.appendChild(typingElement);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }
+  
+      // Generate a response from the bot
+      function generateBotResponse(userMessage) {
+        let botMessage = "I'm here to help with sports updates!"; // Default response
+  
+        // Respond to greetings
+        if (userMessage.toLowerCase() === "hello" || userMessage.toLowerCase() === "hi") {
+          botMessage = "Hello! How can I assist you with sports today?";
+        }
+        
+        // Respond to exit
+        else if (userMessage.toLowerCase() === "exit") {
+          botMessage = "Goodbye! Have a great day!";
+          setTimeout(() => {
+            toggleChatbot(); // Hide chatbot after exit
+          }, 1500);
+        }
+  
+        // General Sports Questions
+        else if (userMessage.toLowerCase().includes("most popular sports")) {
+          botMessage = "The most popular sports globally are soccer (football), cricket, basketball, and field hockey.";
+        } else if (userMessage.toLowerCase().includes("greatest athlete")) {
+          botMessage = "This is a highly debated topic, but many consider athletes like Michael Jordan, Lionel Messi, and Serena Williams among the greatest.";
+        } else if (userMessage.toLowerCase().includes("biggest sporting events")) {
+          botMessage = "Some of the biggest sporting events include the Olympics, the FIFA World Cup, the Super Bowl, and the Wimbledon Championships.";
+        }
+  
+        // Soccer Questions
+        else if (userMessage.toLowerCase().includes("world cup record")) {
+          botMessage = "Miroslav Klose holds the record for the most goals scored in a single World Cup with 16 goals.";
+        } else if (userMessage.toLowerCase().includes("uefa champions league")) {
+          botMessage = "Real Madrid has won the most UEFA Champions League titles with 14.";
+        }
+  
+        // Basketball Questions
+        else if (userMessage.toLowerCase().includes("nba all-time scorer")) {
+          botMessage = "Kareem Abdul-Jabbar is the all-time leading scorer in NBA history.";
+        } else if (userMessage.toLowerCase().includes("nba championships")) {
+          botMessage = "The Boston Celtics have won the most NBA championships with 17.";
+        }
+  
+        // Cricket Questions
+        else if (userMessage.toLowerCase().includes("test cricket scorer")) {
+          botMessage = "Sachin Tendulkar is the highest run-scorer in Test cricket history.";
+        } else if (userMessage.toLowerCase().includes("cricket world cups")) {
+          botMessage = "Australia has won the most Cricket World Cups with 5.";
+        }
+  
+        // American Football Questions
+        else if (userMessage.toLowerCase().includes("super bowls")) {
+          botMessage = "The New England Patriots have won the most Super Bowls with 6.";
+        } else if (userMessage.toLowerCase().includes("super bowl mvp")) {
+          botMessage = "Tom Brady holds the record with 5 Super Bowl MVP awards.";
+        }
+  
+        // Tennis Questions
+        else if (userMessage.toLowerCase().includes("grand slam titles")) {
+          botMessage = "Margaret Court holds the record with 24 Grand Slam singles titles.";
+        } else if (userMessage.toLowerCase().includes("calendar year grand slam")) {
+          botMessage = "Steffi Graf, Serena Williams, and Martina Navratilova have each achieved a Grand Slam in a calendar year.";
+        }
+  
+        // Send the response
+        setTimeout(() => {
+          displayMessage(botMessage, "bot-message");
+        }, 1000);
+      }
+    </script>    
+
+   
+    <section class="section__container experience__container">
+      <div class="experience__image">
+        <img src="images/image3.jpg" alt="experience" />
+      </div>
+      <div class="experience__content">
+        <h2 class="section__header">
+         BADMINTON
+        </h2>
+        <p class="section__description">
+          Badminton is a racquet sport played either in singles or doubles,
+           with the objective of scoring points by hitting a shuttlecock over the net into the opponent's side of the court. 
+           The game involves a lightweight racquet and a shuttlecock, played on a rectangular court divided by a net. 
+           Matches are typically best of three games, each played to 21 points, and players take turns serving. 
+           The sport is governed internationally by the Badminton World Federation (BWF), and it has been an Olympic sport since 1992.
+            Badminton is known for its fast-paced nature, requiring agility, precision, and strategic thinking,
+             making it a popular recreational and competitive activity enjoyed globally for its health benefits and dynamic gameplay.
+        </p>
+        <button class="btn" onclick="window.location.href='https://www.britannica.com/sports/badminton';">Read More</button>
+
+      </div>
+    </section>
+    <section class="section__container experience__container">
+      <div class="experience__image">
+        <img src="images/image2.jpg" alt="experience" />
+      </div>
+      <div class="experience__content">
+        <h2 class="section__header">
+         International  badminton
+        </h2>
+        <p class="section__description">
+          International badminton is a highly competitive and widely popular sport played at the global level. 
+           Governed by the Badminton World Federation (BWF), it involves players from various countries competing in singles and doubles formats. The sport demands agility, precision, and strategic thinking as players aim to score points by hitting a shuttlecock over a net.
+
+Major international badminton events include the Thomas Cup and Uber Cup for team compe
+titions, as well as prestigious individual tournaments like the All England Open, BWF World Championships, and the Olympic Games. These events showcase the top talents in the sport and attract a massive global audience.
+
+International badminton has evolved over the years, witnessing advancements in equipment
+ technology, game strategies, and an increasing level of competitiveness among nations. The sport continues to captivate fans worldwide with its fast-paced rallies, skillful shots, and the intense athleticism displayed by the players. It serves as a platform for cultural exchange and promotes camaraderie among nations through the shared love for this exhilarating racquet sport..
+        </p>
+        <button class="btn">Read More</button>
+      </div>
+    </section>
+    <section class="section__container latest-matches__container" id="latest-matches">
+      <h2 class="section__header">Latest Matches</h2>
+      <div class="latest-matches__list">
+        
+        <div class="latest-match">
+          
+          <div class="latest-match__content">
+            <h3>Match 1: Naraoka K vs Nishimoto K</h3>
+            <p class="latest-match__date">Date: December 23, 2023</p>
+            <p>
+              Exciting match between Naraoka k and Nishimoto K.
+              Do not MISS THE MATCH
+            </p>
+          </div>
+        </div>
+    
+        
+        <div class="latest-match">
+           
+          <div class="latest-match__content">
+            <h3>Match 2: Choo K. Z. H vs Somerville G.</h3>
+            <p class="latest-match__date">Date: December 5, 2023</p>
+            <p>
+              Don't miss the clash between Choo K. Z. H , Somerville G. it will be a greater perform
+              
+            </p>
+          </div>
+        </div>
+    
+       
+        <div class="latest-match">
+          
+          <div class="latest-match__content">
+            <h3>Match 3: Nandu Nateka vs PV Sindhu</h3>
+            <p class="latest-match__date">Date: December 10, 2023</p>
+            <p>
+              High-stakes match between Nandu Nateka vs PV Sindhu. 
+              
+            </p>
+          </div>
+        </div>
+    
+        
+        <div class="latest-match">
+          
+          <div class="latest-match__content">
+            <h3>Match 4: Lamsfuss M. vs Lohau I</h3>
+            <p class="latest-match__date">Date: December 15, 2023</p>
+            <p>
+              Intense competition between Lamsfuss M. , Lohau I.
+              
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section class="section__container testimonials__container" id="testimonials">
+      <h2 class="section__header">Testimonials</h2>
+    
+      <div class="testimonials__list">
+        <div class="testimonial">
+          <div class="testimonial__content">
+            <img src="New folder/per3.jpg" alt="Client Image" class="testimonial__image" />
+            <p class="testimonial__text">
+              "I stumbled upon this incredible sports website while searching for badminton tips,  
+              and let me tell you, it's a game-changer! The expert advice on playing badminton underwater really took my game to the next level.
+               My opponents never saw it coming, and neither did I. Thanks to this site,
+                I'm now the reigning champion of the underwater badminton league in my bathtub!"
+            </p>
+            <p class="testimonial__author">- A. Nonymous, Badminton Enthusiast</p>
+          </div>
+        </div>
+    
+        
+        <div class="testimonial">
+          <div class="testimonial__content">
+            <img src="New folder/per1.jpg" alt="Client Image" class="testimonial__image" />
+            <p class="testimonial__text">
+              "I can't believe the transformation my badminton game has undergone since discovering this website. 
+              The 'Invisible Shuttlecock Mastery' course has taken my opponents by surprise – they can't see the shuttlecock,
+               and neither can I! It's like a ninja badminton match every time.
+                This website turned me into the invisible badminton champion I never knew I could be."
+            </p>
+            <p class="testimonial__author">- Sue Perfake,  Badminton Virtuoso</p>
+          </div>
+        </div>
+    
+        <div class="testimonial">
+          <div class="testimonial__content">
+            <img src="New folder/per4.jpg" alt="Client Image" class="testimonial__image" />
+            <p class="testimonial__text">
+              "Being a badminton enthusiast, I thought I had seen it all until I found this sports website.
+               The 'Extreme Badminton Yoga' section not only improved my flexibility but also taught me how to execute a
+                perfect smash while doing a downward dog. Now, I'm not just winning matches; I'm doing it with unmatched
+                 style and zen-like composure!"
+            </p>
+            <p class="testimonial__author">- Yogi Shuttler, Zen Badminton Master</p>
+          </div>
+        </div>
+    
+        <div class="testimonial">
+          <div class="testimonial__content">
+            <img src="New folder/per2.jpg" alt="Client Image" class="testimonial__image" />
+            <p class="testimonial__text">
+              "I've been a badminton player for years, but this website took my game to new heights – literally! 
+              The 'Space Badminton' training module prepared me for intergalactic tournaments where the shuttlecock floats
+               gracefully in zero gravity. Now, I dominate the extraterrestrial badminton scene, 
+               and my opponents are lost in space trying to keep up!"
+            </p>
+            <p class="testimonial__author">-Stella Starshuttle, Intergalactic Badminton Pioneer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section__container news__container" id="NEWS">
+      
+    
+      <div class="news__article">
+        <img src="images/news.png" alt="News Image" />
+        <div class="news__content">
+          <h3><strong>1.</strong>Final Of China Masters</h3>
+          <p class="news__date"></p>
+          <p>
+            Satwiksairaj Rankireddy-Chirag Shetty Pair Enters Final Of China Masters 2023
+          </p>
+          <h3><strong>2.</strong>HS Prannoy, Lakshya Sen Withdraw From Syed Modi International</h3>
+          <p class="news__date"></p>
+          <p>
+            HS Prannoy and Lakshya Sen have pulled out of the Syed Modi International, taking some sheen out of the Super 300 badminton tournament
+          </p>
+          <h3<strong>3.</strong>>BWF Award Nomination For Satwiksairaj Rankireddy And Chirag Shetty</h3>
+          <p>Satwiksairaj Rankireddy and Chirag Shetty were on Tuesday nominated for the Player Year of the Award by the Badminton World Federation (BWF)</p>
+          <h3><strong>4.</strong>HS Prannoy, Lakshya Sen To Lead Indian Charge At China Masters Super 750</h3>
+          <p>Indian shuttlers, including comeback man HS Prannoy, will eye a good show at the China Masters -- the season's last BWF Super 750 event.</p>
+          
+         
+        </div>
+      </div>
+    
+      
+      <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    </head>
+    <body>
+    
+      <!-- Confirmation message -->
+      <p id="confirmation-message" style="display: none;">Thank you for your rating!</p>
+    
+      <!-- Rating stars -->
+      <div id="rating">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+      
+      <!-- Rating output and submit button -->
+      <p id="rating-output">Rate Our website</p>
+      <button id="submit-rating">Submit Rating</button>
+      
+      <script src="script.js"></script> <!-- Your JavaScript file -->
+    
+    
+    
+    
+
+    
+
+    <footer class="footer">
+      <div class="section__container subscribe__container">
+        <div class="subscribe__content">
+          <p class="section__subheader">OUR NEWSLETTER</p>
+          <h2 class="section__header">Subscribe To Our Newsletter</h2>
+          <p class="section__description">
+            Subscribe to our newsletter and receive exclusive content, expert
+            insights, and special offers delivered directly to your inbox.
+          </p>
+        </div>
+        <div class="subscribe__form">
+          <form action="/">
+            <input type="text" placeholder="Your Email" />
+            <button class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="logo footer__logo">
+            <a href="#"><img src="logo1.png" alt="logo" /></a>
+          </div>
+          <p class="section__description">
+            "Unleashing the Spirit of Victory: Your Gateway to the World of Sporting Excellence at SportsVault."
+          </p>
+          <ul class="footer__socials">
+            <li>
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-google-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-youtube-line"></i></a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer__col">
+          <h4>Our Services</h4>
+          <ul class="footer__links">
+            <li><a href="#latest-matches">MATCHS</a></li>
+            <li><a href="player.html">PLAYER</a></li>
+            <li><a href="rule.html">RULE & REGULATIONS</a></li>
+            
+            <li><a href="contact.html">CONTACT US</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact Info</h4>
+          <ul class="footer__links">
+            <li>
+              <p>
+                Welcome to contact page you can contact us by below given Information and to send us Message fill the below given
+              </p>
+            </li>
+            <li>
+              <p>Phone: <span>+919847567848</span></p>
+            </li>
+            <li>
+              <p>Email: <span>SportsVault@gmail.com</span></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button onclick="topFunction()" id="back-to-top-btn" title="Go to top">
+        <i class="ri-arrow-up-s-line"></i> <img src="New folder/2353486.png" alt="" srcset="">
+      </button>
+    </footer>
+    <div class="footer__bar">
+      Copyright © 2024 SportsVault. All rights reserved.
+    </div>
+    
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+      
+      var mybutton = document.getElementById("back-to-top-btn");
+    
+      
+      window.onscroll = function () {
+        scrollFunction();
+      };
+    
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "flex";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+    
+      
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    
+  </body>
+</html>

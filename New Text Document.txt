@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>SportsVault
+    </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.css" />
+
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__bar">
+          <div class="logo nav__logo">
+            <a href="#"><img src="logo1.png" alt="logo" /></a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-3-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="index.html">HOME</a></li>
+          
+          <li><a href="#latest-matches">MATCHS</a></li>
+          <li><a href="player.html">PLAYER</a></li>
+          <li><a href="#client">CLIENT</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html" class="btn">LOGIN US</a></li>
+        </ul>
+      </nav>
+      <div class="section__container header__container" id="home">
+        <div class="header__content">
+          <h1>Welcome <br>to<br> SportsVault</h1>
+          <div class="header__btn">
+            <button class="btn">Read More</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+   
+    <section class="section__container experience__container">
+      <div class="experience__image">
+        <img src="images/image3.jpg" alt="experience" />
+      </div>
+      <div class="experience__content">
+        <h2 class="section__header">
+         BADMINTON
+        </h2>
+        <p class="section__description">
+          Badminton is a racquet sport played either in singles or doubles,
+           with the objective of scoring points by hitting a shuttlecock over the net into the opponent's side of the court. 
+           The game involves a lightweight racquet and a shuttlecock, played on a rectangular court divided by a net. 
+           Matches are typically best of three games, each played to 21 points, and players take turns serving. 
+           The sport is governed internationally by the Badminton World Federation (BWF), and it has been an Olympic sport since 1992.
+            Badminton is known for its fast-paced nature, requiring agility, precision, and strategic thinking,
+             making it a popular recreational and competitive activity enjoyed globally for its health benefits and dynamic gameplay.
+        </p>
+        <button class="btn">Read More</button>
+      </div>
+    </section>
+    <section class="section__container experience__container">
+      <div class="experience__image">
+        <img src="images/image2.jpg" alt="experience" />
+      </div>
+      <div class="experience__content">
+        <h2 class="section__header">
+         International  badminton
+        </h2>
+        <p class="section__description">
+          International badminton features a range of tournaments at different levels, 
+          including local, regional, and global competitions. Major international tournaments include the Olympic Games, 
+          World Championships, 
+          Thomas Cup (for men's teams), Uber Cup (for women's teams), 
+          and various Open tournaments held in different countries.
+        </p>
+        <button class="btn">Read More</button>
+      </div>
+    </section>
+    <section class="section__container latest-matches__container" id="latest-matches">
+      <h2 class="section__header">Latest Matches</h2>
+      <div class="latest-matches__list">
+        
+        <div class="latest-match">
+          
+          <div class="latest-match__content">
+            <h3>Match 1: Naraoka K vs Nishimoto K</h3>
+            <p class="latest-match__date">Date: December 23, 2023</p>
+            <p>
+              Exciting match between Naraoka k and Nishimoto K.
+              Do not MISS THE MATCH
+            </p>
+          </div>
+        </div>
+    
+        
+        <div class="latest-match">
+           
+          <div class="latest-match__content">
+            <h3>Match 2: Team  vs Team D</h3>
+            <p class="latest-match__date">Date: December 5, 2023</p>
+            <p>
+              Don't miss the clash between Team C and Team D. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+    
+       
+        <div class="latest-match">
+          <img src="images/match3.jpg" alt="Match 3 Image" />
+          <div class="latest-match__content">
+            <h3>Match 3: Team X vs Team Y</h3>
+            <p class="latest-match__date">Date: December 10, 2023</p>
+            <p>
+              High-stakes match between Team X and Team Y. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+    
+        
+        <div class="latest-match">
+          <img src="images/match4.jpg" alt="Match 4 Image" />
+          <div class="latest-match__content">
+            <h3>Match 4: Team P vs Team Q</h3>
+            <p class="latest-match__date">Date: December 15, 2023</p>
+            <p>
+              Intense competition between Team P and Team Q. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section class="section__container testimonials__container" id="testimonials">
+      <h2 class="section__header">Testimonials</h2>
+    
+      <div class="testimonials__list">
+        <div class="testimonial">
+          <div class="testimonial__content">
+            <img src="images/testimonial1.jpg" alt="Client Image" class="testimonial__image" />
+            <p class="testimonial__text">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Nullam in lorem ac urna vestibulum blandit ac sit amet libero."
+            </p>
+            <p class="testimonial__author">- John Doe, Happy Customer</p>
+          </div>
+        </div>
+    
+        
+        <div class="testimonial">
+          <div class="testimonial__content">
+            <img src="images/re.jpg" alt="Client Image" class="testimonial__image" />
+            <p class="testimonial__text">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Nullam in lorem ac urna vestibulum blandit ac sit amet libero."
+            </p>
+            <p class="testimonial__author">- Jane Smith, Satisfied Customer</p>
+          </div>
+        </div>
+    
+        <div class="testimonial">
+          <div class="testimonial__content">
+            <img src="images/testimonial3.jpg" alt="Client Image" class="testimonial__image" />
+            <p class="testimonial__text">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Nullam in lorem ac urna vestibulum blandit ac sit amet libero."
+            </p>
+            <p class="testimonial__author">- Bob Johnson, Delighted Client</p>
+          </div>
+        </div>
+    
+        <div class="testimonial">
+          <div class="testimonial__content">
+            <img src="images/testimonial4.jpg" alt="Client Image" class="testimonial__image" />
+            <p class="testimonial__text">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Nullam in lorem ac urna vestibulum blandit ac sit amet libero."
+            </p>
+            <p class="testimonial__author">- Emily White, Happy User</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section__container news__container" id="news">
+      
+    
+      <div class="news__article">
+        <img src="images/news.png" alt="News Image" />
+        <div class="news__content">
+          <h3>Final Of China Masters</h3>
+          <p class="news__date"></p>
+          <p>
+            Satwiksairaj Rankireddy-Chirag Shetty Pair Enters Final Of China Masters 2023
+          </p>
+          <h3>Quarter Finals</h3>
+          <p class="news__date"></p>
+          <p>
+            HS Prannoy and pair of Satwiksairaj Rankireddy and
+             Chirag Shetty entered the quarterfinals in their respective events at the China Masters badminton tournament.
+          </p>
+         
+        </div>
+      </div>
+    
+      
+    </section>
+    
+    
+    
+
+    
+
+    <footer class="footer">
+      <div class="section__container subscribe__container">
+        <div class="subscribe__content">
+          <p class="section__subheader">OUR NEWSLETTER</p>
+          <h2 class="section__header">Subscribe To Our Newsletter</h2>
+          <p class="section__description">
+            Subscribe to our newsletter and receive exclusive content, expert
+            insights, and special offers delivered directly to your inbox.
+          </p>
+        </div>
+        <div class="subscribe__form">
+          <form action="/">
+            <input type="text" placeholder="Your Email" />
+            <button class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="logo footer__logo">
+            <a href="#"><img src="logo1.png" alt="logo" /></a>
+          </div>
+          <p class="section__description">
+            "Unleashing the Spirit of Victory: Your Gateway to the World of Sporting Excellence at SportsVault."
+          </p>
+          <ul class="footer__socials">
+            <li>
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-google-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-youtube-line"></i></a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer__col">
+          <h4>Our Services</h4>
+          <ul class="footer__links">
+            <li><a href="#latest-matches">MATCHS</a></li>
+            <li><a href="player.html">PLAYER</a></li>
+            
+            <li><a href="contact.html">CONTACT US</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact Info</h4>
+          <ul class="footer__links">
+            <li>
+              <p>
+                Welcome to contact page you can contact us by below given Information and to send us Message fill the below given
+              </p>
+            </li>
+            <li>
+              <p>Phone: <span>+919847567848</span></p>
+            </li>
+            <li>
+              <p>Email: <span>SportsVault@gmail.com</span></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button onclick="topFunction()" id="back-to-top-btn" title="Go to top">
+        <i class="ri-arrow-up-s-line"></i> Back to Top
+      </button>
+    </footer>
+    <div class="footer__bar">
+      Copyright © 2023 SportsVault. All rights reserved.
+    </div>
+    
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+      
+      var mybutton = document.getElementById("back-to-top-btn");
+    
+      
+      window.onscroll = function () {
+        scrollFunction();
+      };
+    
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "flex";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+    
+      
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    
+  </body>
+</html>
